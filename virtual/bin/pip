@@ -1,5 +1,6 @@
-#!/home/elias/myblog/virtual/bin/python
-
+#!/bin/sh
+'''exec' "/home/elias/Documents/moringa-core projects/flask/myblog/virtual/bin/python" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
