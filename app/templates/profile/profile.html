@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block styles%}
+    {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet" style="font-family: 'Gugi', cursive;">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{% block content %}
+ 
+<div class="container">
+<div class="row">
+<!-- displaying  Username-->
+  <div class="col-md-4"style="font-family: 'Gugi', cursive;">
+    <h3> {{user.username| capitalize}} </h3>
+
+    <!--Displaying user bio-->
+    {% if user.bio %}
+      <p> {{user.bio}}</p>
+    {%else%}
+      <p> {{user.username| capitalize}} has no bio </p>
+    {% endif %}
+  </div>
+
+  <!--Display profile photo-->
+  <div class="col-md-4"style="font-family: 'Gugi', cursive;"></div>
+  <div class= "card"style="font-family: 'Gugi', cursive;">
+  
+  
+  <div class="col-md-4">
+  {% if user.profile_pic_path %}
+  <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+  {%else%}
+  <p>No profile picture</p>
+  {% endif %}
+
+  <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
+
+    <input type="file"  name="photo" class="form-control" required style="width:300px;font-family: 'Gugi', cursive;">
+    <input type="submit">
+
+  </form>
+  {% if user == current_user %}
+    <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
+    {%else%}
+    <p>No profile picture</p>
+
+    {% endif %}
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
