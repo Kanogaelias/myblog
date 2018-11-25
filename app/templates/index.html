@@ -1,0 +1,112 @@
+{% extends 'base.html'%}
+
+
+<!-- Styles block -->
+
+{% block styles%}
+{{ super() }}
+<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet" style="font-family: 'Gugi', cursive;">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<!-- Content block -->
+{% block content %}
+
+<div class="jumbotron" style="height:400px;background-image: url(static/photos/woman.jpg);background-repeat:no-repeat;background-color:rgba(20, 16, 16, 0.863);"
+    )>
+
+</div>
+<div class="container" style="font-family: 'Gugi', cursive;">
+    <h1>{{title}}</h1>
+    {% if current_user.is_authenticated%}
+    <h5 style="font-size:40px;text-align:center;">Hello {{current_user.username}}</h5>
+
+    {% else %}
+    <h2>Hello Welcome to Fashion Blog </h2>
+    {%endif%}
+
+
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <img class="card-img-top" src="static/photos/fashion.jpeg" alt="Card image cap">
+                <h5 class="card-title" style="font-family: 'Gugi', cursive;">I welcome you to the fashion World</h5>
+                <a href="/Comment" class="btn btn-primary">Add comment</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <img class="card-img-top" src="static/photos/girl.png" alt="Card image cap">
+                <h5 class="card-title" style="font-family: 'Gugi', cursive;">The boss girl with swag</h5>
+                <a href="/Comment" class="btn btn-primary">Add comment</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top" src="static/photos/shoe.jpeg" alt="Card image cap">
+            <h5 class="card-title" style="font-family: 'Gugi', cursive;">make my world rock with fashion</h5>
+            <a href="/Comment" class="btn btn-primary">Add comment</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top" src="static/photos/people.jpg" alt="Card image cap">
+            <h5 class="card-title" style="font-family: 'Gugi', cursive;">Let the people you walk with have fashion </h5>
+            <a href="/Comment" class="btn btn-primary">Add comment</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top" src="static/photos/myprofile_1.jpeg" alt="Card image cap">
+            <h5 class="card-title">All that matters in my clothes</h5>
+            <a href="/Comment" class="btn btn-primary">Add comment</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top" src="static/photos/download.jpeg" alt="Card image cap">
+            <h5 class="card-title" style="font-family: 'Gugi', cursive;">awsome men fashion</h5>
+            <a href="/Comment" class="btn btn-primary">Add comment</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top" src="static/photos/fasion.jpeg" alt="Card image cap">
+            <h5 class="card-title" style="font-family: 'Gugi', cursive;">Make you world great through fashion</h5>
+            <a href="/Comment" class="btn btn-primary">Add comment</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top" src="static/photos/images.jpeg" alt="Card image cap">
+            <h5 class="card-title" style="font-family: 'Gugi', cursive;">Swag is something you must have</h5>
+            <a href="/Comment" class="btn btn-primary">Add comment</a>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
