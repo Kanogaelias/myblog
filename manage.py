@@ -5,7 +5,7 @@ from app.models import User,Role,Post, Comment, Image, PhotoProfile
 from flask_login import LoginManager
 
 # app = create_app('production')
-app= create_app('production')
+app = create_app('production')
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
