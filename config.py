@@ -14,14 +14,17 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     
-
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kanogaelias:mikedad2002@localhost/blogmy'
+    SQLALCHEMY_TRACK_MODIFICATIONS=True
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class DevConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kanogaelias:mikedad2002@localhost/myblog'
+    
 
-
-config_options ={"production":ProdConfig,"default":DevConfig}
+config_options ={
+"production":ProdConfig,
+"development":DevConfig
+}
 
