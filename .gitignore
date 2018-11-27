@@ -1,0 +1,4 @@
+virtual/
+.vscode/
+start.sh
+__pycache__
