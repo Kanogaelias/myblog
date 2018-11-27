@@ -2,7 +2,7 @@
 This is a web app built with FLASK framework.
 
 # By Elias Kanoga
-Launch the app here 
+Launch the app here https://eliasblog001.herokuapp.com/
 
 # Description
 This is an app that users can log in and write a blog and view all the blogs that other users have created.
